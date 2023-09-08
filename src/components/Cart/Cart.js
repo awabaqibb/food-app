@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Cart.module.css";
+import Modal from "../UI/Modal";
 
 const DUMMY_MEALS = [
   {
@@ -21,9 +22,8 @@ function Cart(props) {
     <ul>
       {DUMMY_MEALS.map((item) => {
         return (
-          <div className={classes["cart-items"]}>
-            <li>{item.name}</li>;<li className={classes.total}>{item.price}</li>
-            ;
+          <div className={classes["cart-items"]} key={item.id}>
+            <li>{item.name}</li>
           </div>
         );
       })}
@@ -31,17 +31,19 @@ function Cart(props) {
   );
 
   return (
-    <div>
+    <Modal>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>35.62</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]}>Close</button>
+        <button className={classes["button--alt"]} onClick={props.onHideCart}>
+          Close
+        </button>
         <button className={classes.button}>Order</button>
       </div>
-    </div>
+    </Modal>
   );
 }
 
