@@ -8,8 +8,7 @@ function MealItemForm(props) {
       <Input
         label="Amount"
         input={{
-          id: "amount",
-          type: "number",
+          id: "amount_" + props.id,
           min: "1",
           max: "5",
           defaultValue: "1",

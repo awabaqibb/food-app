@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import mealsImage from "../../assets/meals.jpg";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
+import Cart from "../Cart/Cart";
 
 function Header(props) {
   return (
